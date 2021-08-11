@@ -1,14 +1,14 @@
 class QuestionsController < ApplicationController
 
-  def ask_me
+  def ask
   end
 
   def answer
-    question = params[:question]
+    @question = params[:question]
     @answer = begin
-    if question == "I am going to work right now!"
+    if @question == "I am going to work right now!"
       "Great!"
-      elsif question.end_with?("?")
+      elsif @question.end_with?("?")
         "Silly question, get dressed and go to work"
       else 
         "I don't care, get dressed and go to work!"
